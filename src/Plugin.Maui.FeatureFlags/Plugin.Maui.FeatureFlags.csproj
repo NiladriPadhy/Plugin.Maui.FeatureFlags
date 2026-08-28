@@ -18,9 +18,9 @@
     <PackageId>Plugin.Maui.FeatureFlags</PackageId>
     <Title>.NET MAUI FeatureFlags — remote config and rollout</Title>
     <Description>Mobile-first feature flags for .NET MAUI on iOS and Android: remote configuration, device / OS / country / user targeting, percentage rollout, kill switches, offline cache, expiration, and Dev/Staging/Production environments.</Description>
-    <PackageTags>dotnet-maui;maui;maui-plugin;maui-utilities;cross-platform;android;ios;nuget;nugetworld;feature-flags;featureflags;remote-config;rollout;targeting;kill-switch;offline</PackageTags>
+    <PackageTags>dotnet-maui;maui;maui-plugin;maui-utilities;cross-platform;android;ios;nuget;mauiessentials;feature-flags;featureflags;remote-config;rollout;targeting;kill-switch;offline</PackageTags>
     <Authors>Niladri</Authors>
-    <Company>NugetWorld</Company>
+    <Company>MauiEssentials</Company>
     <Copyright>Copyright © 2026 Niladri</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
