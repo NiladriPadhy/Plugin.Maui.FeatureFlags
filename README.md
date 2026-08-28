@@ -1,5 +1,7 @@
 # Plugin.Maui.FeatureFlags
 
+[![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.FeatureFlags.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.FeatureFlags)
+
 A mobile-first feature flag system for **.NET MAUI** on **iOS** and **Android**.
 
 ```csharp
@@ -30,6 +32,8 @@ var enabled = await featureFlags.IsEnabledAsync("new_voip_engine");
 ```
 
 ## Install
+
+Package: [https://www.nuget.org/packages/Plugin.Maui.FeatureFlags](https://www.nuget.org/packages/Plugin.Maui.FeatureFlags)
 
 ```bash
 dotnet add package Plugin.Maui.FeatureFlags
