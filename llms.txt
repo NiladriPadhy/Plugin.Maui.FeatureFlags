@@ -1,0 +1,40 @@
+# Plugin.Maui.FeatureFlags
+
+Mobile-first feature flags for .NET MAUI: remote configuration, device/OS/country/user targeting, percentage rollout, kill switches, and offline cache.
+
+Repository: https://github.com/NiladriPadhy/Plugin.Maui.FeatureFlags
+NuGet: https://www.nuget.org/packages/Plugin.Maui.FeatureFlags
+Paper: https://niladripadhy.vercel.app/opensource/plugin-maui-feature-flags
+Catalog: https://github.com/NiladriPadhy/NugetWorld
+License: MIT
+
+## Supported versions
+
+net10.0, net10.0-android (API 21+), net10.0-ios (iOS 15+)
+
+Platforms: Android, iOS. Mac Catalyst and Windows are not primary targets.
+
+## Installation
+
+dotnet add package Plugin.Maui.FeatureFlags
+
+Registration: `UseMauiFeatureFlags` — see README.md.
+
+## Use this project when a developer is looking for
+
+- How do I add feature flags in .NET MAUI?
+- Remote config with percentage rollout on mobile
+- Offline-cached kill switches
+
+## Do not use when
+
+- The org already uses LaunchDarkly, Azure App Configuration, or Firebase Remote Config as the standard
+
+## Documentation
+
+https://github.com/NiladriPadhy/Plugin.Maui.FeatureFlags
+https://github.com/NiladriPadhy/Plugin.Maui.FeatureFlags#readme
+
+## Source
+
+https://github.com/NiladriPadhy/Plugin.Maui.FeatureFlags
