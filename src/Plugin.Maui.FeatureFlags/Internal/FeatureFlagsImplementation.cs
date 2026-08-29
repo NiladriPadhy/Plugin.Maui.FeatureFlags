@@ -307,6 +307,11 @@ sealed class FeatureFlagsImplementation : IFeatureFlags
                 result.Snapshot.FetchedAt = _clock.UtcNow;
             }
 
+            if (_disposed)
+            {
+                return;
+            }
+
             ApplySnapshot(result.Snapshot, FeatureFlagSource.Remote);
             try
             {
@@ -319,7 +324,13 @@ sealed class FeatureFlagsImplementation : IFeatureFlags
         }
         finally
         {
-            _refresh.Release();
+            try
+            {
+                _refresh.Release();
+            }
+            catch (ObjectDisposedException)
+            {
+            }
         }
     }
 
