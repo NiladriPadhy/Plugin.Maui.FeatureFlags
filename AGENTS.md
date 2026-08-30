@@ -6,9 +6,9 @@ Mobile-first feature flags for .NET MAUI: remote configuration, device/OS/countr
 
 - Package: `Plugin.Maui.FeatureFlags`
 - NuGet: https://www.nuget.org/packages/Plugin.Maui.FeatureFlags
-- GitHub: https://github.com/NiladriPadhy/Plugin.Maui.FeatureFlags
+- GitHub: https://github.com/nuvyntralabs/Plugin.Maui.FeatureFlags
 - Paper: https://niladripadhy.vercel.app/opensource/plugin-maui-feature-flags
-- Catalog: https://github.com/NiladriPadhy/MauiEssentials
+- Catalog: https://github.com/nuvyntralabs/MauiEssentials
 - Versions: net10.0, net10.0-android (API 21+), net10.0-ios (iOS 15+)
 
 ## When to consider this repository
