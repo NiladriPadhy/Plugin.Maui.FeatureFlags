@@ -57,6 +57,7 @@ public static class MauiProgram
             {
                 options.Environment = FeatureFlagEnvironment.Production;
                 options.RemoteUri = new Uri("https://cdn.example.com/flags.json");
+                options.RequireHttps = true;
                 options.LocalFlags["new_checkout"] = false;
                 options.LocalFlags["new_voip_engine"] = true;
             });
@@ -124,7 +125,7 @@ A flag is **on** only after every step of the cascade matches and `enabled` is `
 
 Empty arrays mean “no restriction” for that dimension. `percentage` is 0–100; omit it to skip rollout.
 
-Host the file on any HTTPS CDN or API. Add headers if you need them:
+Host the file on any HTTPS CDN or API. `RequireHttps` is `true` by default; set it to `false` only for local development. Add headers if you need them:
 
 ```csharp
 options.RemoteUri = new Uri("https://cdn.example.com/flags.json");
@@ -133,6 +134,9 @@ options.ConfigureRequest = request =>
     request.Headers.Authorization =
         new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 };
+
+// Optional: require HMAC-SHA256 hex in X-FeatureFlags-Signature over the response body.
+options.SignatureKey = hmacSecret;
 ```
 
 `If-None-Match` is sent automatically when the last fetch returned an ETag.
@@ -212,7 +216,7 @@ dotnet build samples/Plugin.Maui.FeatureFlags.Sample/Plugin.Maui.FeatureFlags.Sa
 dotnet pack src/Plugin.Maui.FeatureFlags/Plugin.Maui.FeatureFlags.csproj -c Release -o artifacts
 ```
 
-The `.nupkg` is written to `artifacts/Plugin.Maui.FeatureFlags.1.0.0.nupkg`.
+The `.nupkg` is written to `artifacts/Plugin.Maui.FeatureFlags.1.0.7.nupkg`.
 
 ## License
 

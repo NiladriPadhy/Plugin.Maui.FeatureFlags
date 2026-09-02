@@ -116,12 +116,14 @@ public static class FeatureFlags
             return (null, null);
         }
 
+        HttpFeatureFlagProvider.ValidateRemoteUri(options.RemoteUri, options.RequireHttps);
+
         if (options.HttpClient is not null)
         {
-            return (new HttpFeatureFlagProvider(options.HttpClient, options.RemoteUri, options.ConfigureRequest), null);
+            return (new HttpFeatureFlagProvider(options.HttpClient, options.RemoteUri, options.ConfigureRequest, options.SignatureKey), null);
         }
 
         var http = new HttpClient { Timeout = options.RequestTimeout };
-        return (new HttpFeatureFlagProvider(http, options.RemoteUri, options.ConfigureRequest), http);
+        return (new HttpFeatureFlagProvider(http, options.RemoteUri, options.ConfigureRequest, options.SignatureKey), http);
     }
 }

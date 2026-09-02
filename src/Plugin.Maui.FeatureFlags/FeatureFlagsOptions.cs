@@ -90,4 +90,15 @@ public sealed class FeatureFlagsOptions
     /// Optional hook to add headers (for example authorization) to remote fetches.
     /// </summary>
     public Action<HttpRequestMessage>? ConfigureRequest { get; set; }
+
+    /// <summary>
+    /// When <c>true</c>, <see cref="RemoteUri"/> must use HTTPS. Default is <c>true</c>.
+    /// </summary>
+    public bool RequireHttps { get; set; } = true;
+
+    /// <summary>
+    /// Optional HMAC-SHA256 key. When set, the HTTP provider requires
+    /// <c>X-FeatureFlags-Signature</c> (hex) over the response body.
+    /// </summary>
+    public string? SignatureKey { get; set; }
 }
