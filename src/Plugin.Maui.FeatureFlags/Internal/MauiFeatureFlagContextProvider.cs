@@ -1,4 +1,4 @@
-#if ANDROID || IOS
+#if ANDROID || IOS || MACCATALYST || WINDOWS
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices;
 using Microsoft.Maui.Storage;
@@ -28,7 +28,7 @@ sealed class MauiFeatureFlagContextProvider : IFeatureFlagContextProvider
             Attributes = user?.Attributes ?? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         };
 
-#if ANDROID || IOS
+#if ANDROID || IOS || MACCATALYST || WINDOWS
         Try(() =>
         {
             context = context with
@@ -62,7 +62,7 @@ sealed class MauiFeatureFlagContextProvider : IFeatureFlagContextProvider
             return _options.DeviceId;
         }
 
-#if ANDROID || IOS
+#if ANDROID || IOS || MACCATALYST || WINDOWS
         try
         {
             var existing = Preferences.Default.Get(FeatureFlagsDefaults.DeviceIdKey, "");

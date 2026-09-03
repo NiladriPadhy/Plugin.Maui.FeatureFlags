@@ -97,7 +97,7 @@ public static class FeatureFlags
 
     static IFeatureFlagContextProvider CreateContextProvider(FeatureFlagsOptions options, string directory)
     {
-#if ANDROID || IOS
+#if ANDROID || IOS || MACCATALYST || WINDOWS
         return new MauiFeatureFlagContextProvider(options, directory);
 #else
         return new FallbackFeatureFlagContextProvider(options);

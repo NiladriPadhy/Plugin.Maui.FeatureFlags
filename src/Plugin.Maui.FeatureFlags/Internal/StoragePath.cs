@@ -1,4 +1,4 @@
-#if ANDROID || IOS
+#if ANDROID || IOS || MACCATALYST || WINDOWS
 using Microsoft.Maui.Storage;
 #endif
 
@@ -19,7 +19,7 @@ static class StoragePath
 
     static string? TryAppData()
     {
-#if ANDROID || IOS
+#if ANDROID || IOS || MACCATALYST || WINDOWS
         try
         {
             return FileSystem.AppDataDirectory;
